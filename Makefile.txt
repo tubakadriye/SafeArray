@@ -1,0 +1,19 @@
+#Ar=ar
+CXX=g++
+CXXFLAGS=-I.
+LDFLAGS=-L.
+#LIBS=-lcomplex
+LDIR=.
+
+DEPS=safe.h
+OBJS=safe.o 
+
+all: $(OBJS) 
+	g++ -o main.x main.cpp $(CXXFLAGS) $(LDFLAGS)
+
+%.o: %.cpp $(DEPS)
+	$(CXX) -c $@ $(CXXFLAGS)
+
+clean:
+
+	rm -f *.o *.x
